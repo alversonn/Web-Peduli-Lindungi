@@ -1,0 +1,552 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../Fonts/Roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(../Fonts/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url(../Fonts/Poppins/Poppins-Light.ttf);
+}
+
+
+
+.container {
+  width: 100%;
+  height: 370vh;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas: 
+  'nav'
+  'main'
+  'menu'
+  'tentang'
+  'statistik'
+  'footer';
+  /* overflow: auto; */
+  /* background-color: #f5f5f5fb; */
+}
+
+body::-webkit-scrollbar{
+  width: 9px;
+  
+}
+
+body::-webkit-scrollbar-thumb{
+  background: #A7B0B5;
+    border-radius: 10px;
+}
+
+nav {
+  grid-area: nav;
+  z-index: 1;
+  /* border: 1px solid black; */
+}
+
+main {
+  grid-area: main;
+  /* border: 1px solid red; */
+}
+
+menu {
+  grid-area: menu;
+  /* border: 1px solid purple; */
+}
+
+.tentang {
+  grid-area: tentang;
+  /* border: 1px solid rgb(55, 0, 255); */
+}
+
+.statistik {
+  grid-area: statistik;
+  text-align: center;
+  /* border: 1px solid rgb(253, 0, 0); */
+}
+
+footer {
+  grid-area: footer;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+}
+
+.statistik h3 {
+  color: #269AD7;
+  margin-bottom: 45px;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+#chartContainer{
+  width: 1300px;
+  height: 370px;
+  margin: auto;
+}
+
+
+
+.navbar {
+  width:  100%;
+    color: #269AD7;
+    background-color: #ffffff;
+    padding: 12px;
+    /* box-shadow: 0px 1px 0px rgb(134, 134, 160); */
+    border-bottom: 2px solid #f0f0f0a6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+/* .brand {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    margin-top: 10px;
+    border: 1px solid pink;
+} */
+
+    .logo {
+        width: 210px;
+        height: 60px;
+        /* border: 1px solid springgreen; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .atasan {
+        background-color: white;
+        /* overflow: hidden; */
+    }
+
+    .atasan a {
+      /* float: right; */
+      color: #269AD7;
+      text-align: center;
+      /* padding: 14px 16px; */
+      margin-right: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .atasan a:hover {
+      color: #269AD7;
+      text-decoration: 3px overline;
+      transition: all 2s;
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      background-image: url(../img/logo.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      /* border: 1px solid fuchsia; */
+    }
+  .account, .not_login{
+    width: 186px;
+    height: 55px;
+    border: 1px solid #d8d8d8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 25px;
+    position: relative;
+    background-color: #fff;
+  }
+  
+  .not_login {
+    justify-content: space-evenly;
+
+  }
+
+  .not_login a {
+    font-family: 'Poppins-Light';
+    font-size: 16px;
+    text-decoration: none;
+    color: #269AD7;
+  }
+  
+  .account h3 {
+    font-size: 15px;
+    font-family: 'Poppins-Light';
+    color: black;
+
+  }
+
+  .account img {
+    width: 15px;
+    cursor: pointer;
+  }
+
+  .photo-profil,.default {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+  }
+  
+  .default {
+    background-color: #F4BF00;
+  }
+  
+  .custom {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #616161;
+  }
+
+  .photo-profil .default h4 {
+    color: black;
+  }
+
+  .background-main {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(#EAF5FA,#D5F2FF);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .background-main h3 {
+    font-size: 30px;
+  }
+
+  .icon-main{
+    width: 370px;
+    height: 400px;
+    background-image: url(../img/icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    /* border: 1px solid red; */
+    margin-bottom: -20px;
+  }
+
+  #btn-cek {
+    /* width: 200px;
+    height: 50px; */
+    text-decoration: none;
+    padding: 12px 38px 12px 38px;
+    background-color: #269AD7;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
+  .caption-main h3 {
+    color: #269AD7;
+    margin-bottom: 30px;
+  }
+
+.menu {
+  width: 100%;
+  height: 300px;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon-vaksinasi, .icon-hasiltest, .icon-statistik{
+  width: 140px;
+  height: 100px;
+  /* border: 1px solid greenyellow; */
+}
+
+.icon-vaksinasi img{
+  width: 245px;
+  height: 190px;
+  transform: translate(-40px,-82px);
+}
+
+.icon-hasiltest img {
+  width: 245px;
+  height: 190px;
+  transform: translate(-60px,-85px);
+}
+
+.icon-statistik img {
+  width: 170px;
+  height: 130px;
+  transform: translate(-5px, -33px);
+}
+
+.riwayat h4 {
+  margin-left: 26px;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.vaksinasi, .hasil-test, .riwayat {
+  width: 270px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #F4BF00;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  /* border: 1px solid blue; */
+  /* overflow: hidden; */
+}
+
+.vaksinasi h4, .hasil-test h4 {
+  margin-left: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.tentang1, .tentang2{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title-about1 h2, .title-about2 h2 {
+  letter-spacing: 0.5px;
+}
+
+.tentang2 {
+  background-color: #f0f0f0a6;
+}
+
+.tentang1 p, .tentang2 p{
+  width: 600px;
+  font-size: 13px;
+  /* border: 1px solid black; */
+  color: #4e4e4e;
+  text-align: justify;
+  padding: 40px;
+}
+
+.tentang1{
+  margin-bottom: 40px;
+}
+
+.tentang2 p {
+  margin-left: 50px;
+}
+
+.dropbtn {
+  width: 186px;
+  height: 55px;
+  position: absolute;
+  /* border: 1px solid red; */
+  cursor: pointer;
+}
+
+.dropdown-content {
+  width: 187px;
+  height: auto;
+  position: absolute;
+  display: none;
+}
+
+.dropdown-content a {
+  height: 50px;
+  border: 1px solid #d8d8d8;
+  color: #000;
+  text-decoration: none;
+  /* vertical-align: middle; */
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+.dropdown-content a img {
+  margin-left: 18px;
+  margin-right: 25px;
+  width: 20px;
+  height: 20px;
+}
+
+.dropbtn:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  transform: translateY(56px);
+}
+
+
+.account:hover .dropdown {
+  transform: rotateX(185deg);
+}
+
+.footer1 {
+  width: 100%;
+  height: 300px;
+  /* background-color: #269AD7; */
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+
+.kiri {
+  /* border: 1px solid greenyellow; */
+  margin-left: 50px;
+}
+
+.kiri p{
+  width: 390px;
+  text-align: justify;
+  font-size: 15px;
+  /* border: 1px solid #F4BF00; */
+  padding-left: 15px;
+  margin-bottom: 50px;
+}
+
+.kiri img {
+  width: 75px;
+  height: 80px;
+  margin-bottom: 10px;
+  /* z-index: 1; */
+}
+
+.kiri-logo {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.kiri-logo h3 {
+  font-size: 19px;
+  color: #269AD7;
+}
+
+.sosmed {
+  display: flex;
+  align-items: center;
+}
+
+.sosmed a{
+  font-size: 14px;
+  text-decoration: none;
+  color: #269AD7;
+}
+
+.facebook, .instagram, .twitter{
+  width: 25px;
+  height: 25px;
+  /* border: 1px solid red; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 12px;
+  margin-right: 10px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.facebook {
+  background-image: url(../img/facebook.png);
+}
+
+.instagram {
+  background-image: url(../img/instagram.png);
+  margin-left: 15px;
+}
+
+.twitter {
+  background-image: url(../img/twitter.png);
+  margin-left: 15px;
+}
+
+.tengah {
+  width: 400px;
+  /* border: 1px solid salmon; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 50px;
+}
+
+.tengah img{
+  width: 100px;
+  height: 48px;
+}
+
+.kotak-checkin{
+  width: 480px;
+  height: 190px;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #269AD7;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border-radius: 8px;
+}
+
+.title-checkin{
+  color: white;
+  letter-spacing: 1px;
+}
+
+.check {
+  /* border: 1px solid greenyellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lokasi-checkin, .timer, .checkin {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.timer {
+  margin-right: 140px;
+}
+
+.lokasi-checkin img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.timer img{
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.checkin img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
